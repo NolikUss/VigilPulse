@@ -1,0 +1,24 @@
+# [ IDE ]
+.git
+.vscode
+
+
+# [ Python/venv ]
+
+__pycache__/
+.venv
+venv
+
+# [ SECRETS ]
+
+.env
+config.yml
+
+# [ DATABASES ]
+
+*.db
+
+# [ LOGS ]
+
+*.log
+logs

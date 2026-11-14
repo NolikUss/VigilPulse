@@ -20,5 +20,3 @@ config.yml
 # [ LOGS ]
 
 logs/*.log
-*.log
-logs

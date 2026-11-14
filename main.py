@@ -4,6 +4,7 @@ import os
 from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
 from bot.services.logger import setup_logging
+from bot.middlewares.auth import AuthMiddleware
 
 
 # Events
@@ -20,6 +21,7 @@ async def main() -> None:
 
 
     dp.include_router(main_router)
+    dp.message.middleware(AuthMiddleware())
     bot_token = os.getenv("BOT_TOKEN")
     if not bot_token:
         raise RuntimeError("BOT_TOKEN is not set. Add it to your .env file.")

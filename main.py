@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 
 # Events
-from bot.events.startup import router as startup_router
+from bot.__init__ import router as main_router
 
 
 
@@ -16,7 +16,7 @@ from bot.events.startup import router as startup_router
 async def main() -> None:
     load_dotenv()
     dp = Dispatcher()
-    dp.include_router(startup_router)
+    dp.include_router(main_router)
     bot_token = os.getenv("BOT_TOKEN")
     if not bot_token:
         raise RuntimeError("BOT_TOKEN is not set. Add it to your .env file.")

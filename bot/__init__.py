@@ -1,7 +1,6 @@
 from aiogram import Router
 
-from events.__init__ import router as events_router
-
+from .events import router as events_router
 
 router = Router()
 

@@ -1,9 +1,14 @@
+import logging
+
+
 from aiogram import Router
 from aiogram.filters import CommandStart
 
 
 router = Router()
+logger =  logging.getLogger(__name__)
+
 
 @router.startup()
 async def on_startup() -> None:
-    print("Bot is starting...")
+    logger.warning("Bot is starting...")

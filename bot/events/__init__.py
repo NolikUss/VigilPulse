@@ -1,8 +1,8 @@
 from aiogram import Router
 
 
-from startup import router as startup_router
-from shutdown import router as shutdown_router
+from .startup import router as startup_router
+from .shutdown import router as shutdown_router
 
 
 router = Router()

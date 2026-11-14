@@ -3,11 +3,11 @@ import os
 
 from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
-
+from bot.services.logger import setup_logging
 
 
 # Events
-from bot.__init__ import router as main_router
+from bot import router as main_router
 
 
 
@@ -16,6 +16,9 @@ from bot.__init__ import router as main_router
 async def main() -> None:
     load_dotenv()
     dp = Dispatcher()
+    setup_logging()
+
+
     dp.include_router(main_router)
     bot_token = os.getenv("BOT_TOKEN")
     if not bot_token:
